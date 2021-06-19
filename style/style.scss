@@ -1,0 +1,560 @@
+$padding-desktop: 3em 7em;
+$padding-mobile: 3em 2em;
+$padding-375px: 1.5em 1em;
+$text-color: hsl(228, 39%, 23%);
+$bright-red: hsl(12, 88%, 59%);
+$nav-links-hover: hsla(228, 39%, 23%, 0.5);
+$button-hover: hsla(12, 88%, 59%, 0.5);
+$h1-font-size: clamp(1.5rem, 5vw, 3rem);
+$h2-font-size: clamp(1.2rem, 5vw, 2.5rem);
+$whitespace: .5em;
+$dark-grayish-blue: hsl(227, 12%, 61%);
+$Very-Pale-Red: hsl(13, 100%, 96%);
+$Vary-Light-Gray: hsl(0, 0%, 98%);
+
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 16px;
+    font-family: 'Be Vietnam', sans-serif;
+    overflow-x: hidden;
+}
+h1,h2,h3,h4{
+    color: $text-color;
+}
+p{
+    color: $dark-grayish-blue;
+}
+
+// navbar styling
+.navbar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: $padding-desktop;
+    z-index: 100;
+    align-items: center;
+}
+.nav-list{
+    display: flex;
+    
+    .nav-items{
+    margin-left: 1.5em;
+    list-style: none;
+
+        .nav-links{
+            text-decoration: none;
+            color: $text-color;
+            font-weight: 700;
+            transition: .4s;
+
+            &:hover{
+                color: $nav-links-hover;
+            }
+        }
+    }
+}
+.menu-bar{
+    cursor: pointer;
+    display: none;
+}
+.button{
+    width: 10rem;
+    height: 3rem;
+    cursor: pointer;
+    background: $bright-red;
+    outline: none;
+    border: none;
+    border-radius: 2rem;
+    color: white;
+    font-weight: 700;
+    transition: .3s;
+
+    &:hover{
+        background: $button-hover;
+    }
+}
+//main section
+//landing section styling
+.l-section{
+    width: 100%;
+    min-height: 60vh;
+    display: flex;
+    padding: $padding-desktop;
+    margin-top: 6em;
+    position: relative;
+}
+
+.l-content{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h1{
+        font-size: $h1-font-size;
+        line-height: 1;
+        color: $text-color;
+        margin-bottom: $whitespace;
+    }
+    button{
+        margin-top: 2em;
+    }
+}
+.l-image{
+    background: white;
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.overlay{
+    position: absolute;
+    top: -15rem;
+    left: -60rem;
+    filter: invert(1);
+    width: 100%;
+    height: 100vh;
+    object-fit: fill;
+    pointer-events: none;
+
+    img{
+        min-width: 80%;
+        min-height: 100%;
+    }
+}
+//about section styling
+.a-section{
+    width: 100%;
+    min-height: 50vh;
+    padding: $padding-desktop;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6em;
+}
+
+.a-header{
+    width: 50%;
+
+    h2{
+        color: $text-color;
+        font-size: $h2-font-size;
+        margin-bottom: $whitespace;
+    }
+}
+.a-content{
+    width: 40%;
+}
+.a-wrapper{
+    display: flex;
+    margin-bottom: 2em;
+
+    .a-number{
+        margin-right: .5em;
+        padding: .8em 1.5em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 1em;
+        height:1em;
+        border-radius: .8em;
+        background: $bright-red;
+        color: white;
+    }
+}
+
+.a-context{
+    h3{
+        margin-bottom: .5em;
+    }
+}
+
+//testimonials section styling
+.t-section{
+    margin-top: 6em;
+    width: 100%;
+    min-height: 50vh;
+}
+.t-header{
+    text-align: center;
+
+    h2{
+        font-size: $h2-font-size;
+        margin-bottom: 2em;
+    }
+}
+
+.t-grid{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    place-items: center;
+    gap: 1em;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1em 1em 0 1em;
+    width: 26rem;
+    min-height: 13rem;
+    background: $Vary-Light-Gray;
+    text-align: center;
+    margin-top: 2em;
+    cursor: pointer;
+
+    .card-user{
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        img{
+            position: absolute;
+            top: -3rem;
+            width: 6rem;
+            height: 6rem;
+        }
+    }
+
+    .card-context{
+        h4{
+            margin-bottom: .5em;
+        }
+    }
+}
+.t-button{
+    display: flex;
+    margin-top: 2em;
+    justify-content: center;
+}
+
+
+// get started section styling
+.g-section{
+    width: 100%;
+    padding: $padding-desktop;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6em;
+    background: $bright-red;
+
+    h2{
+        font-size: $h2-font-size;
+        color: white;
+    }
+}
+.g-button{
+    background-color: white;
+    color: $bright-red;
+
+    &:hover{
+        background: white;
+    }
+}
+
+//footer
+//footer section styling
+.f-section{
+    padding: $padding-desktop;
+    display: flex;
+    justify-content: space-between;
+    background: $text-color;
+    color: white;
+}
+.f-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.f-socials{
+    img{
+        margin-left: 1em;
+        transition: .2s;
+        cursor: pointer;
+        
+        &:hover{
+        fill: $bright-red;
+    }
+    }
+}
+
+.f-list{
+    list-style: none;
+
+    li{
+         margin-bottom: .5em;
+         cursor: pointer;
+         transition: .2s;
+
+         &:hover{
+             color: $bright-red;
+         }
+    }
+}
+
+.f-form{
+    width: 100%;
+    display: flex;
+
+    input{
+        width: 100%;
+        padding: .5em 1em;
+        height: 3rem;
+        border-radius: 3rem;
+        outline: none;
+        border: none;
+    }
+
+    button{
+        color: white;
+        margin-left: 1em;
+        width: 7rem;
+        height: 3rem;
+        border-radius: 3rem;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        background: $bright-red;
+        font-weight: 700;
+        transition: .2s;
+
+        &:hover{
+                background: $button-hover;
+            }
+    }
+}
+
+.copyright{
+    text-align: center;
+}
+
+// responsive design area
+@media screen and (max-width: 1090px){
+
+    //navbar styling
+    .nav-list{
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        position: fixed;
+        top: 7rem;
+        left: 50%;
+        padding: 1.5em;
+        // width: 20rem;
+        width: 50%;
+        min-height: 50vh;
+        background: white;
+        transform: translateX(-50%);
+        border-radius: 2em;
+        z-index: 99;
+        transition: .1s ;
+        pointer-events: none;
+        opacity: 0;
+    }
+
+    .add{
+        opacity: 1;
+        pointer-events: all;
+    }
+    .n-btn{
+        display: none;
+    }
+
+    .menu-bar{
+        display: block;
+        width: 2rem;
+        height: 1.5rem;
+        background-image: url('/images/icon-hamburger.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .close-icon{
+        width: 2rem;
+        height: 2rem;
+        background-image: url('/images/icon-close.svg');
+    }
+    //landing page styling
+    .l-section{
+        margin-top: 3em;
+        flex-direction: column-reverse;
+    }
+    .l-content{
+        text-align: center;
+        width: 100%;
+        align-items: center;
+    }
+    .l-image{
+        width: 100%;
+        margin-bottom: 2em;
+        justify-content: center;
+    }
+    .overlay{
+        display: none;
+    }
+    
+    //about section styling
+    .a-section{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .a-header{
+        text-align: center;
+        width: 100%;
+    }
+
+    .a-content{
+        margin-top: 2em;
+        width: 100%;
+    }
+    .a-wrapper{
+        .a-number{
+           margin-right: -1em; 
+        }
+    }
+    .a-context{
+        h3{
+            padding: 0 1em;
+            width: 100%;
+            height: 1.4em;
+            background: hsla(12, 88%, 59%, 0.3);
+            border-radius: .8em;
+        }
+        
+    }
+
+    // get started section styling
+    .g-section{
+        flex-direction: column;
+        align-items: center;
+
+        h2{
+            text-align: center;
+            margin-bottom: 0.5em;
+        }
+    }
+
+    .g-button{
+        margin-top: 1em;
+    }
+
+    //footer section styling
+    .f-section{
+        flex-direction: column;
+        align-items: center;
+    }
+    .f-socials{
+        margin-top: 1em;
+    }
+    .desktop-ul{
+        display: none;
+    }
+    .mobile-ul{
+        margin-top: 1em;
+        display: flex;
+        justify-content: space-between;
+        width: 60%;
+        text-align: center;
+    }
+    .f-form{
+        margin-top: 1em;
+    }
+    .copyright{
+        margin-top: 1.5em;
+    }
+}
+
+@media screen and (max-width: 600px){
+    html{
+        font-size: 14px;
+    }
+
+    .navbar, .l-section, .a-section, .g-section, .f-section{
+        padding: $padding-mobile;
+    }
+
+    //navbar styling
+    .nav-list{
+        width: 90%;
+    }
+    //landing section styling
+    .l-image{
+        img{
+            width: 100%;
+        }
+    }
+
+    //testimonials section styling
+    .desktop-grid{
+        display: none;
+    }
+     .swiper-wrapper{
+        padding: .3em;
+        grid-template-columns: repeat(4, 100%);
+        gap: 0;
+    }
+    .swiper-slide{
+        width: 100%;
+        padding: 1em 3em 1em 3em;
+        min-height: 15rem;
+    }
+
+    .cover{
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        background: rgba(0, 0, 0, 0.315);
+        top: 0;
+        left: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: .1s;
+    }
+    .show-cover{
+        visibility: visible;
+    }
+}
+
+@media screen and (max-width: 375px){
+    html{
+        font-size: 12px;
+    }
+
+    .navbar, .l-section, .a-section, .g-section, .f-section{
+        padding: $padding-375px;
+    }
+
+    //testimonials section styling
+    .card{
+        padding: 1em .5em;
+    }
+    
+    // footer section styling
+    .f-form{
+        flex-direction: column;
+        align-items: center;
+
+        button{
+            width: 100%;
+            margin-top: 1em;
+            margin-left: 0;
+        }
+    }
+}
+
+@media screen and (min-width: 600px){
+    .swiper-container{
+        display: none;
+    }
+}
+@media screen and (min-width: 1090px){
+    .mobile-ul{
+        display: none;
+    }
+}
